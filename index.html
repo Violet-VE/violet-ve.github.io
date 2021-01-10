@@ -146,7 +146,9 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="An elegant Material-Design theme for Hexo">
+            <span class="h2" id="subtitle" title="想你心就明 心就暗 灯火就阑珊
+想你云就聚 云就散 人间就美满
+想你再几夜 再几晚 也不嫌慢">
               
             </span>
 
@@ -181,17 +183,19 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/10/hello-world/">Hello World</a>
+        <a href="/2021/01/10/%E5%85%B3%E4%BA%8E%E6%9C%AC%E5%8D%9A%E5%AE%A2/">关于本博客</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/01/10/hello-world/">
+        <a href="/2021/01/10/%E5%85%B3%E4%BA%8E%E6%9C%AC%E5%8D%9A%E5%AE%A2/">
           
           
             
           
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
+          首先欢迎光临在下的后花园。本博客是由于主站搭建极其缓慢所以先行的版本，搭建于GitHub项目地址。使用框架为Hexo。使用主题为Fluid。
+以下是关于使用Hexo部署到GitHub需要注意的事项及快捷指令等Create a new post1$ hexo new &quot;My New Post&quot;
+More info: Writing
+Run server1$ hexo server
         </a>
       </p>
 
@@ -317,7 +321,34 @@ Quick
       var typing = Fluid.plugins.typing;
       var title = document.getElementById('subtitle').title;
       
-      typing(title)
+      $.ajax({
+        type: 'GET',
+        url: 'https://v1.jinrishici.com/all.json',
+        headers: {},
+        dataType: 'json',
+        success: function (result) {
+          var text;
+          if (result) {
+            var keys = 'content'.split('.')
+            if (result instanceof Array) {
+              result = result[0]
+            }
+            for (const k of keys) {
+              var value = result[k]
+              if (typeof value === 'string') {
+                text = value
+                break
+              } else if (value instanceof Object) {
+                result = value
+              }
+            }
+          }
+          text ? typing(text) : typing(title);
+        },
+        error: function () {
+          typing(title)
+        }
+      })
       
     })(window, document);
   </script>
