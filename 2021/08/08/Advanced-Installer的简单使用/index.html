@@ -18,7 +18,7 @@
   <meta name="author" content="小纯洁">
   <meta name="keywords" content="">
   
-  <title>关于本博客及Hexo的部署指南 - 萝莉，妹妹，猫！</title>
+  <title>Advanced Installer的简单使用 - 萝莉，妹妹，猫！</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="关于本博客及Hexo的部署指南">
+            <span class="h2" id="subtitle" title="Advanced Installer的简单使用">
               
             </span>
 
@@ -178,8 +178,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-08-05 15:15" pubdate>
-        2021年8月5日 下午
+      <time datetime="2021-08-08 22:30" pubdate>
+        2021年8月8日 晚上
       </time>
     </span>
   
@@ -190,7 +190,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      342 字
+      0 字
     </span>
   
 
@@ -200,7 +200,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      1
        分钟
     </span>
   
@@ -238,74 +238,20 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">关于本博客及Hexo的部署指南</h1>
+            <h1 style="display: none">Advanced Installer的简单使用</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 天前
+                  本文最后更新于：1 分钟前
                 
               </p>
             
             <div class="markdown-body">
-              <p>首先欢迎光临在下的后花园。本博客是由于主站搭建极其缓慢所以先行的版本，搭建于GitHub<sub><a target="_blank" rel="noopener" href="https://github.com/Violet-VE/violet-ve.github.io">项目地址</a></sub>。使用框架为<sub><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a></sub>。使用主题为<sub><a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid</a></sub>。</p>
-<h2 id="以下是关于使用Hexo部署到GitHub需要注意的事项及快捷指令等"><a href="#以下是关于使用Hexo部署到GitHub需要注意的事项及快捷指令等" class="headerlink" title="以下是关于使用Hexo部署到GitHub需要注意的事项及快捷指令等"></a>以下是关于使用Hexo部署到GitHub需要注意的事项及快捷指令等</h2><h3 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h3><blockquote>
-<p>以创建私有Repository为例</p>
-</blockquote>
-<ol>
-<li><p>首先创建一个repository，名称应为：xxx.github.io</p>
-</li>
-<li><p>在自己的电脑上安装hexo:cmd输入:npm install hexo-cli -g注意：应该先安装nodejs</p>
-</li>
-<li><p>安装hexo-deployer-git</p>
-</li>
-<li><p>然后寻找一个存放你hexo文件的目录，例如：D:\hexo</p>
-</li>
-<li><p>生成你的hexo：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo init &lt;folder&gt;<br>$ <span class="hljs-built_in">cd</span> &lt;folder&gt;<br>$ npm install<br></code></pre></td></tr></table></figure></li>
-<li><p>在 <code>_config.yml</code> 添加如下配置:</p>
-</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">deploy:<br>  <span class="hljs-built_in">type</span>: git<br>  repo: https://github.com/&lt;username&gt;/&lt;project&gt;<br>  <span class="hljs-comment"># example, https://github.com/hexojs/hexojs.github.io</span><br>  branch: gh-pages<br></code></pre></td></tr></table></figure>
-
-<ol start="7">
-<li>安装git并添加用户信息：</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-comment"># 加--global代表是全局配置</span><br>$ git config --global user.name <span class="hljs-string">&#x27;github用户名&#x27;</span><br>$ git config --global user.email <span class="hljs-string">&#x27;邮箱&#x27;</span><br></code></pre></td></tr></table></figure>
-
-<ol start="8">
-<li>运行hexo clean &amp;&amp; hexo deploy</li>
-<li>查看你的 xxx.github.io 注意：可能会有延迟,建议过几分钟再去看<br><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages">参考</a></li>
-</ol>
-<h3 id="hexo相关指令"><a href="#hexo相关指令" class="headerlink" title="hexo相关指令"></a>hexo相关指令</h3><h4 id="创建一个新文章"><a href="#创建一个新文章" class="headerlink" title="创建一个新文章"></a>创建一个新文章</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>更多信息: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h4 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>更多信息: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h4 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>更多信息: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h4 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>更多信息: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+              
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
-                    
-                      <a class="hover-with-bg" href="/categories/%E6%95%99%E7%A8%8B/hexo/">hexo</a>
-                    
-                      <a class="hover-with-bg" href="/categories/%E6%95%99%E7%A8%8B/hexo/WIKI/">WIKI</a>
-                    
-                      <a class="hover-with-bg" href="/categories/%E6%95%99%E7%A8%8B/hexo/WIKI/%E6%97%A5%E5%B8%B8/">日常</a>
-                    
-                  </div>
                 
                 
               </div>
@@ -321,15 +267,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/08/08/Advanced-Installer%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Advanced Installer的简单使用</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2021/08/05/hello-world/">
+                        <span class="hidden-mobile">关于本博客及Hexo的部署指南</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
